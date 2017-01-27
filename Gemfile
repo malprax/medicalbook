@@ -49,10 +49,15 @@ gem 'aws-sdk', '~> 2.1'      # for S3 storage
 gem 'roda'                   # for direct_upload plugin
 # gem 'sucker_punch', '~> 2.0' # for backgrounding plugin
 
+gem 'carrierwave'
+gem 'carrierwave-base64'
+gem "fog-aws"
+
 # for form
 gem 'simple_form'
 gem 'country_select'
 gem 'nested_form'
+gem 'kaminari'
 
 # for step form
 gem 'wicked'
@@ -89,3 +94,9 @@ gem "cancancan"
 gem "geocoder"
 gem "sendgrid"
 gem "rails-settings-cached"
+
+gem 'underscore-rails'
+gem 'gmaps4rails'
+gem 'jquery-timepicker-rails'
+gem 'jquery-ui-rails'
+gem 'momentjs-rails'
