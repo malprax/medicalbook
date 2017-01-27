@@ -1,0 +1,18 @@
+
+<ul class="nav navbar-nav">
+  <li><%= link_to "Dashboard", root_path %></li>
+  <li><%= link_to "Stats", root_path %></li>
+  <li><%= link_to "Inbox", root_path %></li>
+  <li><%= link_to "Bookings", root_path %></li>
+  <li class="dropdown">
+    <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"> Users <span class="caret"></span></a>
+    <ul role="menu" class="dropdown-menu">
+      <% if current_user.is_super_admin? %>
+        <li><%= link_to 'Admins', admins_path %></li>
+      <% end %>
+      <li><%= link_to 'Therapists', therapists_path %></li>
+      <li><%= link_to 'Patients', patients_path %></li>
+    </ul>
+  </li>
+  <li><%= link_to "Payment Settings", root_path %></li>
+</ul>

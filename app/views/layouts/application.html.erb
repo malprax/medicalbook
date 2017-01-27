@@ -9,6 +9,14 @@
   </head>
 
   <body>
-    <%= yield %>
+    <%= yield :stylesheets %>
+    <div id="wrapper">
+      <div id="page-wrapper" class="gray-bg">
+        <%= render 'layouts/inspinia-template/header' %>
+        <%= yield %>
+      </div>
+    </div>
+    <%= render 'layouts/inspinia-template/footer' %>
+    <%= yield :javascripts %>
   </body>
 </html>
