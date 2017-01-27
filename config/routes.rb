@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :admins
+  resources :therapists
+  resources :patients
   devise_for :users
   get 'pages/index'
 
