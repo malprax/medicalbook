@@ -1,0 +1,53 @@
+// SIGNUP BUTTON SOSCMED
+.signup-button{
+  text-align: center;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  display: block;
+
+  &.facebook{
+    background-color: #3b5998;
+  }
+
+  &.google{
+    background-color: #db4437;
+  }
+
+  &.email{
+    background-color: #49bd3c;
+  }
+
+  .icon{
+    float: left;
+    font-size: 24px;
+  }
+
+  .text{
+    font-size: 16px;
+  }
+
+  &:hover,&:active{
+    color: whitesmoke;
+  }
+}
+
+.separator-signup{
+  font-size: 14px;
+  font-weight: 200;
+  font-style: italic;
+  color: #d6d6d6;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+p.agree{
+  text-align: center;
+  color: #b7b7b7;
+
+  a{
+    color: #b7b7b7;
+    text-decoration: underline;
+  }
+}
