@@ -21,12 +21,12 @@
         <h2>Not a member yet?</h2>
       </div>
       <div class="ibox-content">
-        <%#= link_to user_facebook_omniauth_authorize_path(professional: params[:professional]), class: "signup-button facebook" do %>
+        <%= link_to user_facebook_omniauth_authorize_path(professional: params[:professional]), class: "signup-button facebook" do %>
           <span class="icon fa fa-facebook"></span> <span class="text">Sign up with Facebook</span>
-        <%# end %>
-        <%#= link_to user_google_oauth2_omniauth_authorize_path(professional: params[:professional]), class: "signup-button google" do %>
+        <% end %>
+        <%= link_to user_google_oauth2_omniauth_authorize_path(professional: params[:professional]), class: "signup-button google" do %>
           <span class="icon fa fa-google"></span> <span class="text">Sign up with Google</span>
-        <%# end %>
+        <% end %>
 
         <div class="separator-signup">
           <span>- or -</span>
