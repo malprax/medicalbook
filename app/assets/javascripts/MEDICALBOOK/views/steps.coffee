@@ -1,4 +1,4 @@
-PHYSIALITY.namespace 'Steps', (() ->
+MEDICALBOOK.namespace 'Steps', (() ->
   return {
     # take image from camera initial
     initTakePicture: ->
@@ -33,7 +33,7 @@ PHYSIALITY.namespace 'Steps', (() ->
       $("#form_step_therapist").steps({
         bodyTag: "fieldset",
         onInit: (event, currentIndex) ->
-          # PHYSIALITY.Steps.initTakePicture()
+          # MEDICALBOOK.Steps.initTakePicture()
 
 
         onStepChanging: (event, currentIndex, newIndex) ->
@@ -64,13 +64,13 @@ PHYSIALITY.namespace 'Steps', (() ->
 
           # # set to take picture when on this step
           if(currentIndex == 0)
-            PHYSIALITY.Steps.initTakePicture()
+            MEDICALBOOK.Steps.initTakePicture()
           else
-            PHYSIALITY.Steps.removeTakePicture()
+            MEDICALBOOK.Steps.removeTakePicture()
 
           # set location
           if (currentIndex == 3)
-            PHYSIALITY.Steps.getLocation('#maps_wrapper');
+            MEDICALBOOK.Steps.getLocation('#maps_wrapper');
 
         onFinishing: (event, currentIndex) ->
           form = $(this)
@@ -98,16 +98,16 @@ PHYSIALITY.namespace 'Steps', (() ->
           }
         })
       $(document).on 'change', '#travel_radius', ->
-        PHYSIALITY.Steps.getLocation('#maps_wrapper')
+        MEDICALBOOK.Steps.getLocation('#maps_wrapper')
       $(document).on 'change', '#pull_from_address', ->
-        PHYSIALITY.Steps.getLocation('#maps_wrapper')
+        MEDICALBOOK.Steps.getLocation('#maps_wrapper')
       $(document).on 'click', '.select_work_day', ->
         $('#working_calendar').multiDatesPicker('resetDates')
-        PHYSIALITY.Steps.initCalendar(PHYSIALITY.Steps.get_days_available())
+        MEDICALBOOK.Steps.initCalendar(MEDICALBOOK.Steps.get_days_available())
 
-      PHYSIALITY.Steps.uploadFile()
-      PHYSIALITY.Steps.timePicker()
-      PHYSIALITY.Steps.initCalendar($('#working_calendar').data('dates'));
+      MEDICALBOOK.Steps.uploadFile()
+      MEDICALBOOK.Steps.timePicker()
+      MEDICALBOOK.Steps.initCalendar($('#working_calendar').data('dates'));
 
     uploadFile: ->
       $('.upload_file').on 'change', (evt) ->
@@ -159,8 +159,8 @@ PHYSIALITY.namespace 'Steps', (() ->
       d.setMonth(d.getMonth() + 2)
       days_available = []
       while d >= now
-        console.log(PHYSIALITY.Steps.getDayName(now))
-        if checkedValues.includes(PHYSIALITY.Steps.getDayName(now))
+        console.log(MEDICALBOOK.Steps.getDayName(now))
+        if checkedValues.includes(MEDICALBOOK.Steps.getDayName(now))
           days_available.push(moment(now).format('MM/DD/YYYY').toString())
         now.setDate(now.getDate() + 1)
 
@@ -203,7 +203,7 @@ PHYSIALITY.namespace 'Steps', (() ->
           if (status == google.maps.GeocoderStatus.OK)
             latitude = results[0].geometry.location.lat()
             longitude = results[0].geometry.location.lng()
-            PHYSIALITY.Steps.createMap(latitude, longitude, dataTarget, dataRadius, dataSetLatitude, dataSetLongitude)
+            MEDICALBOOK.Steps.createMap(latitude, longitude, dataTarget, dataRadius, dataSetLatitude, dataSetLongitude)
           else
             $('#' + dataTarget).html('<div class="map-info">GEOCODE FAILED</div>')
           )
@@ -215,7 +215,7 @@ PHYSIALITY.namespace 'Steps', (() ->
               # success get location
               latitude = position.coords.latitude;
               longitude = position.coords.longitude;
-              PHYSIALITY.Steps.createMap(latitude, longitude, dataTarget, dataRadius, dataSetLatitude, dataSetLongitude)
+              MEDICALBOOK.Steps.createMap(latitude, longitude, dataTarget, dataRadius, dataSetLatitude, dataSetLongitude)
 
             (error) ->
               # unsuccessfull get location show error

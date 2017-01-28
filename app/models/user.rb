@@ -18,7 +18,7 @@ class User < ApplicationRecord
 
   def check_professional
     #code
-    if proffesional == "true"
+    if professional == "true"
       self.type = "Therapist"
     else
       #code

@@ -5,14 +5,14 @@
         <h2>LOGIN</h2>
       </div>
       <div class="ibox-content">
-        <%#= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-          <%#= bootstrap_flash %>
-          <%#= f.input :email, required: false, autofocus: true, :label => false, :placeholder => "Email" %>
-          <%#= f.input :password, required: false, :label => false, :placeholder => "Password" %>
-          <%#= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+        <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <%= bootstrap_flash %>
+          <%= f.input :email, required: false, autofocus: true, :label => false, :placeholder => "Email" %>
+          <%= f.input :password, required: false, :label => false, :placeholder => "Password" %>
+          <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
 
-          <%#= f.submit "Log In", :class => "btn btn-primary full-width" %>
-        <%# end %>
+          <%= f.submit "Log In", :class => "btn btn-primary full-width" %>
+        <% end %>
       </div>
     </div>
 
@@ -44,5 +44,5 @@
 </div>
 
 <%= content_for :stylesheets do %>
-  <%#= stylesheet_link_tag 'views/login', media: 'all' %>
+  <%= stylesheet_link_tag 'views/login', media: 'all' %>
 <% end %>
