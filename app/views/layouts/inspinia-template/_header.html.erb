@@ -1,0 +1,18 @@
+<div class="row border-bottom white-bg">
+  <nav class="navbar navbar-static-top" role="navigation">
+      <div class="navbar-header">
+          <button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
+              <i class="fa fa-reorder"></i>
+          </button>
+          <a href="<%= root_url %>" class="navbar-brand">PHYSIALITY</a>
+      </div>
+      <div class="navbar-collapse collapse" id="navbar">
+        <% if current_user %>
+          <%= render "layouts/inspinia-template/header/#{current_user.type.downcase}" %>
+          <%= render 'layouts/inspinia-template/header/login-header' %>
+        <% else %>
+          <%= render 'layouts/inspinia-template/header/non-login-header' %>
+        <% end %>
+      </div>
+  </nav>
+</div>

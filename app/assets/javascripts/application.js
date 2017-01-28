@@ -13,4 +13,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
+//= require twitter-bootstrap
+//= require nprogress
+//= require nprogress-turbolinks
+
+//= require ./MEDICALBOOK/init
+//= require ./MEDICALBOOK/common
+//= require_tree ./MEDICALBOOK/views
