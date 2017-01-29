@@ -15,10 +15,10 @@ development:
 
 
 production:
-  <<: *default
-  database: medicalbook_production
-  username: medicalbook
-  password: <%= ENV['MEDICALBOOK_DATABASE_PASSWORD'] %>
+  # <<: *default
+  # database: medicalbook_production
+  # username: medicalbook
+  # password: <%= ENV['MEDICALBOOK_DATABASE_PASSWORD'] %>
 
 
 test:
