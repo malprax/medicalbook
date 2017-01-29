@@ -12,13 +12,12 @@ development:
 
   # <<: *defaults
 production:
-# development:
-#   database: dc57tjbnmppg78
-#   username: hccuvwwyxrdugt
-#   password: xun48thKVzS6aa3czou-x-cq95
-#   host: ec2-54-83-3-38.compute-1.amazonaws.com
-#   port: 5432
-#   <<: *defaults
+  database: d3t6ua1n90m0qi
+  username: haasnqcxhhlmkw
+  password: 5fdbf1f9e290eff7ed8f23b7af8b4ebc4b2f47f78605123a55b02c7ea44855ad
+  host: ec2-23-21-238-246.compute-1.amazonaws.com
+  port: 5432
+
 
 test:
   # database: physiality_test
