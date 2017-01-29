@@ -6,7 +6,7 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
-  <<: *defaults
+  <<: *default
   database: medicalbook_development
   username: postgres
   password:
@@ -22,6 +22,5 @@ production:
 
 
 test:
-  <<: *defaults
+  <<: *default
   database: medicalbook_tests
-  
