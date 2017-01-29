@@ -3,13 +3,3 @@ development:
   FACEBOOK_SECRET: "379d64c60ebe9332919d7578c41f3b2c"
   GOOGLE_CLIENT_ID: "929101990969-0n4jcv0f4n90ssjjrkeckcc365up1r54.apps.googleusercontent.com"
   GOOGLE_SECRET: "z-d4kzozUYWudx6rw15W_oYb"
-
-test:
-  FACEBOOK_KEY:
-  FACEBOOK_SECRET:
-production:
-  FACEBOOK_KEY: "1817967595141373"
-  FACEBOOK_SECRET: "a4162be4f5417cf38d6924ec57889d59"
-  GOOGLE_CLIENT_ID: "929101990969-0n4jcv0f4n90ssjjrkeckcc365up1r54.apps.googleusercontent.com"
-  GOOGLE_SECRET: "z-d4kzozUYWudx6rw15W_oYb"
-  

@@ -260,6 +260,8 @@ Devise.setup do |config|
     :provider_ignores_state => true
   }
 
+  # OmniAuth.config.full_host = Rails.env.production? ? 'https://medicalbook.com' : 'http://medicalbook.dev'
+
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
