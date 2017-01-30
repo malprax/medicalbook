@@ -12,10 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require bootstrap-sprockets
 //= require turbolinks
-//= require twitter-bootstrap
 //= require nprogress
 //= require nprogress-turbolinks
+//= require nprogress-bootstrap
 
 //= require ./MEDICALBOOK/init
 //= require ./MEDICALBOOK/common
