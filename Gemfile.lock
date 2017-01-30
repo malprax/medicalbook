@@ -114,6 +114,8 @@ GEM
     fog-xml (0.1.2)
       fog-core
       nokogiri (~> 1.5, >= 1.5.11)
+    font-awesome-rails (4.7.0.1)
+      railties (>= 3.2, < 5.1)
     formatador (0.2.5)
     geocoder (1.4.1)
     globalid (0.3.7)
@@ -391,6 +393,7 @@ DEPENDENCIES
   fastimage
   figaro
   fog-aws
+  font-awesome-rails
   geocoder
   gmaps4rails
   google-api-client
@@ -433,4 +436,4 @@ RUBY VERSION
    ruby 2.2.6p396
 
 BUNDLED WITH
-   1.14.2
+   1.14.3

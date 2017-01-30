@@ -100,3 +100,6 @@ gem 'gmaps4rails'
 gem 'jquery-timepicker-rails'
 gem 'jquery-ui-rails'
 gem 'momentjs-rails'
+
+#font style
+gem "font-awesome-rails"
