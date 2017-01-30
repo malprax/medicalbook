@@ -16,7 +16,6 @@
 //= require turbolinks
 //= require nprogress
 //= require nprogress-turbolinks
-//= require nprogress-bootstrap
 
 //= require ./MEDICALBOOK/init
 //= require ./MEDICALBOOK/common
