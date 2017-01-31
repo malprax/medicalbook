@@ -22,3 +22,16 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+
+Javascript test
+Language Basics
+Objects and Arrays
+Window, Browser & DOM Scripting
+Expressions, Operators and Statements
+Functions, Classes and Modules
+Regular Expressions
+CSS & HTTP scripting
+Event Handling
+Client Side Storage
+Scripted Media & Graphics
