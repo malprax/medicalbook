@@ -1,0 +1,36 @@
+<div class="ibox-title">
+  <h5>Address</h5>
+  <div class="ibox-tools">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+        <i class="fa fa-wrench"></i>
+    </a>
+    <ul class="dropdown-menu dropdown-user">
+        <li><a href="#">Review</a></li>
+        <li><a href="#">Suspend</a></li>
+        <li><a href="#">Delete</a></li>
+    </ul>
+  </div>
+</div>
+<div class="ibox-content">
+  <div class="row">
+    <div class="col-xs-12">
+      <% if @patient.addresses.present? %>
+        <table class="table table-bordered">
+          <% @patient.addresses.each do |address| %>
+            <tr>
+              <td>
+                <address>
+                  <%= address.full_street_address %><br>
+                  <i class="fa fa-phone"></i> <%= address.phone %><br>
+                  <% if address.emergency_contact.present? %>
+                    <i class="fa fa-phone"></i> <%= address.emergency_contact %>
+                  <% end %>
+                </address>
+              </td>
+            </tr>
+          <% end %>
+        </table>
+      <% end %>
+    </div>
+  </div>
+</div>

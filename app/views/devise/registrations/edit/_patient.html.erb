@@ -1,0 +1,39 @@
+<% content_for :head do %>
+  <%#= tag :meta, :name => "stripe-key", :content => ENV['STRIPE_PUBLIC_KEY'] %>
+<% end %>
+<div class="loginColumns animated fadeInDown">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="ibox-title">
+        <h2>Edit Patient Profile</h2>
+      </div>
+      <div class="ibox-content">
+
+        <%= simple_nested_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, id: "card_form" }) do |f| %>
+          <%= f.error_notification %>
+
+          <ul class="nav nav-tabs" role="tablist" style="padding: 0px 20px; margin: 0px -20px;">
+            <li role="presentation" class="active"><a href="#profile" aria-controls="home" role="tab" data-toggle="tab">Profile</a></li>
+            <li role="presentation"><a href="#address" aria-controls="profile" role="tab" data-toggle="tab">Address</a></li>
+            <li role="presentation"><a href="#payment_settings" aria-controls="profile" role="tab" data-toggle="tab">Payment Settings</a></li>
+          </ul>
+
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="profile">
+              <%= render :partial => "devise/registrations/edit/patient/profile", :locals => {:f => f} %>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="address">
+              <%= render :partial => "devise/registrations/edit/patient/address", :locals => {:f => f} %>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="payment_settings">
+              <%= render :partial => "devise/registrations/edit/patient/payment_settings", :locals => {:f => f} %>
+            </div>
+            <div style="margin-top: 15px;">
+              <%= f.submit "Update", :class => "btn btn-success" %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

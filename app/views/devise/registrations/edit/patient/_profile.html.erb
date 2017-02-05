@@ -1,0 +1,10 @@
+<div class="row">
+  <div class="col-xs-12">
+    <%= f.input :email, required: true, autofocus: true %>
+    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+      <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+    <% end %>
+    <%= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false %>
+    <%= f.input :password_confirmation, required: false %>
+  </div>
+</div>

@@ -10,14 +10,43 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170127135842) do
+ActiveRecord::Schema.define(version: 20170205044504) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "addresses", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "phone"
+    t.string   "country"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip"
+    t.string   "address_1"
+    t.string   "address_2"
+    t.boolean  "main_address"
+    t.float    "longitude"
+    t.float    "latitude"
+    t.float    "fetched_latitude"
+    t.float    "fetched_longitude"
+    t.string   "emergency_contact"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.index ["user_id"], name: "index_addresses_on_user_id", using: :btree
+  end
+
   create_table "admins", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "patient_profiles", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "services"
+    t.string   "las_4_digits"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["user_id"], name: "index_patient_profiles_on_user_id", using: :btree
   end
 
   create_table "patients", force: :cascade do |t|
@@ -77,4 +106,6 @@ ActiveRecord::Schema.define(version: 20170127135842) do
     t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true, using: :btree
   end
 
+  add_foreign_key "addresses", "users"
+  add_foreign_key "patient_profiles", "users"
 end

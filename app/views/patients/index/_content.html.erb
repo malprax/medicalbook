@@ -1,0 +1,30 @@
+<div class="ibox-content">
+  <div class="row m-b-lg">
+    <div class="col-md-12">
+      <%= simple_form_for :search, :url => patients_path, :remote => true, :html => {:style => "margin-top: 20px;"} do |f| %>
+        <div class="input-group">
+          <%= f.input :name, :wrapper => false, :input_html => {:class => "input-sm form-control"}, :label => false %>
+          <span class="input-group-btn">
+            <button type="button" class="btn btn-sm btn-primary"> Go!</button>
+          </span>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="row" id="item_content_wrapper">
+    <% if @patients.present? %>
+      <% @patients.each do |patient| %>
+        <%= render :partial => 'patients/index/item', :locals => {:item => patient} %>
+      <% end %>
+    <% else %>
+
+    <% end %>
+  </div>
+</div>
+
+<% if @patients.present? %>
+  <div class="ibox-footer text-right">
+    <%= paginate @patients, :remote => true %>
+  </div>
+<% end %>

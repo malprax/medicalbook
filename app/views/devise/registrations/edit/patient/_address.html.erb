@@ -1,0 +1,33 @@
+<div id="address_wrapper">
+  <%= f.simple_fields_for :addresses do |address| %>
+    <div class="row">
+      <div class="col-xs-12 text-right">
+        <%= address.link_to_remove "x", :class => "btn btn-danger" %>
+      </div>
+    </div>
+    <%= address.input :country, :include_blank => false, priority: ["CA", "US", "ID"] %>
+    <%= address.input :address_1, :label => "Address", :include_blank => false %>
+    <%= address.input :address_2, :required => false, :label => false %>
+    <div class="row">
+      <div class="col-xs-6">
+        <%= address.input :phone %>
+      </div>
+      <div class="col-xs-6">
+        <%= address.input :city, :label => "Town / City" %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-6">
+        <%= address.input :state, :label => "Province" %>
+      </div>
+      <div class="col-xs-6">
+        <%= address.input :zip, :label => "Postalcode / ZIP" %>
+      </div>
+    </div>
+  <% end %>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <%= f.link_to_add "<i class='fa fa-plus'></i>&nbsp;&nbsp;Add Address".html_safe, :addresses, :class => "btn btn-primary", :data => { :target => "#address_wrapper" } %>
+  </div>
+</div>
