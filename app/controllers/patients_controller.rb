@@ -1,9 +1,10 @@
 class PatientsController < ApplicationController
-  before_action :set_patient, only: [:show, :edit, :update, :destroy]
+  # before_action
 
   # GET /patients
   # GET /patients.json
   def index
-    @patients = Patient.all
+    # @patients = Patient.all
+    @patients = Patient.page(params[:page])
   end
 end
