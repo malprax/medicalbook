@@ -35,11 +35,6 @@ ActiveRecord::Schema.define(version: 20170205044504) do
     t.index ["user_id"], name: "index_addresses_on_user_id", using: :btree
   end
 
-  create_table "admins", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "patient_profiles", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "services"
